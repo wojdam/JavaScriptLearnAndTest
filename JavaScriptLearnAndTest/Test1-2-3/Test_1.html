@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>First test page for javascript.</title>
+
+</head>
+<body>
+
+    <p id="currTime"></p>
+    <button type="button" onclick="CurrentTime()">Get current Time!</button>
+    <button type="button" onclick="ChangeFontSize()">Change font style</button>
+    <button type="button" onclick="MakeSmallFontSize()">Make small style</button>
+
+    <hr />
+
+    <button type="button" onclick="DrawCircle()">Draw circle</button>
+
+    <hr />
+
+    <button type="button" onclick="ShowAlert()">Show Alert!</button>
+    <button type="button" onclick="ShowWrite()">Show Write</button>
+
+    <p>
+        <script>document.write(" 5 + 6 = " + 5 + 6 + " :( ;");</script>
+
+        <script>document.write(5 + 6 + " = 5 + 6 :)")</script>
+
+    </p>
+
+    <p id="TestIF">
+        <button type="button" onclick="TestFunctIF()">Test IF</button>
+        <script>this.TestFunctIF();</script><!--Nefunguje, proc?-->
+    </p>
+    <hr />
+
+    <p id="TestVar"><button type="button" onclick="TestVariables()">Test Var</button></p>
+
+
+
+
+    <!-- Performance reason to insert javascripts on the bottom of the page. The page can be loaded faster
+         due to cached javascript files. -->
+    <script src="Scripts/snap/snap.svg.js"></script>
+    <script src="Test_1.js"></script>
+</body>
+</html>
