@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JQuery Test 2</title>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.small,span.big').css('border', '5px solid red');
+
+            $('[title]').css('border', '5px solid yellowgreen');
+
+            $('div[title]').css('border', '5px solid gold');
+
+            $('span[title]').css('border', '5px solid aquamarine');
+
+            $('[title="div2title"]').css('border', '5px solid plum');
+
+            $('[title*="bla"]').css('border', '5px solid olive');
+
+            $('div[title]').filter(function() {
+                return $(this).attr('title').toLowerCase() === "titlefordiv";
+            }).css('border', '2px solid turquoise');
+
+            $('div[title]').filter(function() {
+                return (/dwq/i).test($(this).attr('title'));
+            }).css('background-color', 'saddlebrown');
+        });
+    </script>
+</head>
+<body>
+
+<span class="small">Span 1</span>
+<br/>
+<div class="small">Div 1</div>
+<span class="big">Span 2</span>
+<p class="big">This is a paragraph.</p>
+
+<p class="small big">Second paragaph.</p>
+
+
+<div title="div1title">Div11</div>
+<div title="div2title">Div12</div>
+<p title="pTitle">paragraph</p>
+<span title="spantitle">Span part</span>
+    
+<div title="blabla vovj">dalsi div</div>
+
+<div title="TitleForDiv">Div 111</div>
+<div title="titlefordiv">div 111</div>
+<div title="TITLEFORDIV">DIV 111</div>
+
+    <div title="dWqasd">Div 111</div>
+    <div title="DWQrty">div 111</div>
+    <div title="dwQerr">DIV 111</div>
+
+</body>
+</html>

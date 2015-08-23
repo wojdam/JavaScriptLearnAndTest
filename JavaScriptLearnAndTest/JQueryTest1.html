@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            alert($('td').length);
+
+            $('tr:even').css('background-color', 'red');
+            $('tr:odd').css('background-color', 'gold');
+
+            $('table tr').each(function () {
+                alert($(this).html());
+            });
+
+            $('span, a, div').css('background-color', 'yellowgreen');
+        });
+        
+
+    </script>
+</head>
+<body>
+<style>
+    table, td, tr {
+        border: 1px solid aquamarine;
+    };
+</style>
+<table>
+    <tr>
+        <td>C#</td>
+        <td>ASP.NET</td>
+        <td>SQL Server</td>
+    </tr>
+    <tr>
+        <td>ADO.NET</td>
+        <td>jQuery</td>
+        <td>JavaScript</td>
+    </tr>
+    <tr>
+        <td>AJAX</td>
+        <td>CSS</td>
+        <td>HTML</td>
+    </tr>
+</table>
+
+<div id="div1">DIV 1</div>
+<div id="div2">DIV 2</div>
+<div id="div3">DIV 3</div>
+
+<span id="span1">SPAN 1</span></br>
+<a href="http://www.seznam.cz" id="linktoseznam">Seznam najdu tam co neznam.</a>
+
+
+</body>
+</html>

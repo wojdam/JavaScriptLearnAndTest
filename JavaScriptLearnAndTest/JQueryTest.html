@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JQuery Start</title>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function() { // Fires after DOM is loaded (the structure)
+        $('#buttonFire').click(function() {
+            alert("jQuery Start!");
+        });
+
+        if ($('#buttouuunFire').length > 0) {
+
+            alert("button found!");
+        } else {
+
+            alert("button not found");
+        }
+
+        $('#buttonFire').css('background-color','red');
+
+        alert("DOM loaded");
+    });
+
+    $(window).load(function() { // Fires after whole window is loaded incl. pictures, css files etc.
+        alert("Window loaded");
+
+        $('#div1').html("Nejaky textik");
+    });
+</script>
+
+    <input type="button" id="buttonFire" value="Click Me"/>
+
+    <input type="button" id="buttonFire" value="Click Me" />
+
+<div id="div1"></div>
+</body>
+</html>

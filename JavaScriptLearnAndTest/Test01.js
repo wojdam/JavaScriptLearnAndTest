@@ -1,8 +1,10 @@
 ﻿var array = ["a", "b", "c", "d"];
 
 for (item in array) {
+    if (array.hasOwnProperty(item)) {
 
-    document.write(array[item] + "<br />");
+        document.write(array[item] + "<br />");
+    }
 }
 
 console.log("Test");
@@ -47,10 +49,23 @@ variable = "global variable";
 
 console.log(variable);
 
-(function Test() {
+(function() {
 
     var variable = "local variable";
     console.log(variable);
 })();
 
 console.log(variable);
+
+var variablea = "mimo IF";
+
+console.log(variablea);
+{
+    if (true) {
+
+        var variablea = "V IF podmince"; // !!!!!!
+        console.log(variablea);
+    }
+}
+console.log(variablea);
+
