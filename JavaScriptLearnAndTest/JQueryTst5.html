@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JQuery Test 5</title>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#selectCountries').change(function() {
+                var selected = $('#selectCountries option:selected');
+                $('#resultSelection').html('Value = ' + selected.val() + ' Text = ' + selected.text());
+            });
+
+            $('#selectCountries1').change(function() {
+                var selectedObjects = $('#selectCountries1 option:selected');
+                if (selectedObjects.length > 0) {
+
+                    var string = "";
+                    selectedObjects.each(function() {
+                        string += "Value = " + $(this).val() + ", Text = " + $(this).text() + "<br/>";
+                    });
+
+                    $('#resultSelection1').html(string);
+                }
+            });
+
+            $('#textArea1:disabled').css('border', '3px solid red');
+        });
+
+    </script>
+</head>
+<body>
+
+Country:
+<select id="selectCountries">
+    <option value="USA">United States</option>
+    <option value="CR">Czech Republic</option>
+    <option value="IND">India</option>
+    <option value="CA">Canada</option>
+</select>
+<br/>
+    <br/>
+    Country1:
+<select id="selectCountries1" multiple="multiple">
+    <option value="USA">United States</option>
+    <option value="CR">Czech Republic</option>
+    <option value="IND">India</option>
+    <option value="CA">Canada</option>
+</select>
+
+<br/>
+<div id="resultSelection"></div>
+<br/>
+<div id="resultSelection1"></div>
+<br/>
+    <textarea id="textArea1" disabled="disabled"></textarea>
+
+
+
+</body>
+</html>

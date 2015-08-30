@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JQuery Test 4</title>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var getCheckedBoxes = function(groupName) {
+                var result = $('input[name="' + groupName + '"]:checked');
+
+                if (result.length > 0) {
+
+                    var resultString = result.length + " checkboxes checked <br/>";
+
+                    result.each(function() {
+                        resultString += $(this).val() + "<br/>";
+                    });
+
+                    $('#resultCheck' + groupName).html(resultString);
+                } else {
+                    $('#resultCheck' + groupName).html("No checkbox checked");
+                }
+            };
+
+            $('#GetSelectedCities').click(function() {
+
+                getCheckedBoxes("cities");
+
+            });
+
+            $('#GetSelectedSkills').click(function() {
+
+                getCheckedBoxes("skills");
+
+            });
+
+            $('input[name="cities"]').each(function() {
+
+                $(this).click(function() {
+                    getCheckedBoxes("cities");
+                });
+            });
+
+            $('input[name="skills"]').each(function () {
+                $(this).click(function() {
+                    getCheckedBoxes("skills");
+                });
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+
+    Cities:
+<input type="checkbox" name="cities" value="New York"/>New York
+<input type="checkbox" name="cities" value="Bohumin"/>Bohumin
+<input type="checkbox" name="cities" value="Ostrava"/>Ostrava
+<br/><br/>
+
+Skills:
+<input type="checkbox" name="skills" value="C#"/>C#
+<input type="checkbox" name="skills" value="C++"/>C++
+<input type="checkbox" name="skills" value="Java"/>Java
+<br/><br/>
+<input type="submit" id="GetSelectedCities" value="Get Selected Cities"/>
+    <input type="submit" id="GetSelectedSkills" value="Get Selected Skills"/>
+    <br/><br/>
+<div id="resultCheckskills"></div>
+    <br/><br/>
+    <div id="resultCheckcities"></div>
+
+</body>
+</html>

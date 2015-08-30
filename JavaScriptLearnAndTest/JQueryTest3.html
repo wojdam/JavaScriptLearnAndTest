@@ -3,6 +3,44 @@
 <head>
     <title>JQuery Test 3</title>
     <script src="Scripts/jquery-2.1.4.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            //$('input[type="text"]').each(function () {
+
+                //alert($(this).val());
+
+            //});
+
+            //$('input[type="radio"]:checked').each(function() {
+            //    alert($(this).val());
+            //});
+
+            //$('input[type="checkbox"]:checked').each(function () {
+            //    alert($(this).val());
+            //});
+
+            $('#btnSubmit').click(function() {
+                var result = $('input[type="checkbox"]:checked');
+
+                if (result.length > 0) {
+
+                    var resultString = result.length + " checkboxes checked <br/>";
+
+                    result.each(function() {
+                        resultString += $(this).val() + "<br/>";
+                    });
+
+                    $('#resultCheck').html(resultString);
+                } else {
+                    $('#resultCheck').html("No checkbox checked");
+                }
+            });
+
+
+        });
+    </script>
 </head>
 <body>
 
@@ -18,7 +56,7 @@
     Skills:
     <input type="checkbox" name="skills" value="JavaScript"/>JavaScript
     <input type="checkbox" name="skills" value="JQuery"/>JQuery
-    <input type="checkbox" name="skills" value="C#"/>C#
+    <input type="checkbox" name="skills" value="C#" checked="checked"/>C#
     <br/><br/>
     Country:
     <select>
@@ -32,6 +70,8 @@
     <br/>
     <br/>
     <input type="submit" value="submitNow"/>
+    <input type="submit" id="btnSubmit" value="Check Me!"/>
+    <div id="resultCheck"></div>
 </p>
 
 </body>

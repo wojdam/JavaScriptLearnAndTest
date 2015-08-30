@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JQuery Test 6</title>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('li').css('color', 'blue');
+            $('li').slideUp(1000);
+            $('li').slideDown(1000);
+            $('li').attr('title', 'My Title');
+
+            var employeeJSON = [
+                {
+                    "firstName": "Martin",
+                    "lastName": "Vojik",
+                    "gender": "male"
+                },
+                {
+                    "firstName": "Romik",
+                    "lastName": "Chmelik",
+                    "gender": "female"
+                }
+            ];
+
+            var result = "";
+            result += 'First name = ' + employeeJSON[1].firstName + '<br/>';
+            result += 'Last name = ' + employeeJSON[1].lastName + '<br/>';
+            result += 'Gender = ' + employeeJSON[1].gender + '<br/>';
+
+            $('#resultJSON').html(result);
+
+            result = JSON.stringify(employeeJSON);
+            $('#resultJSON').html(result);
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>US</li>
+    <li>India</li>
+    <li>Czech Republic</li>
+</ul>
+<div id="resultJSON"></div>
+    <div id="jsonString"></div>
+</body>
+</html>
