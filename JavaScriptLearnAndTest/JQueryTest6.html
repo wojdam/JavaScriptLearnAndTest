@@ -6,12 +6,15 @@
     <script>
         $(document).ready(function () {
 
+            var d = new Date();
+           
+
             $('li').css('color', 'blue');
             $('li').slideUp(1000);
             $('li').slideDown(1000);
             $('li').attr('title', 'My Title');
 
-            var employeeJSON = [
+            var employeeJson = [
                 {
                     "firstName": "Martin",
                     "lastName": "Vojik",
@@ -25,14 +28,30 @@
             ];
 
             var result = "";
-            result += 'First name = ' + employeeJSON[1].firstName + '<br/>';
-            result += 'Last name = ' + employeeJSON[1].lastName + '<br/>';
-            result += 'Gender = ' + employeeJSON[1].gender + '<br/>';
+            result += 'First name = ' + employeeJson[1].firstName + '<br/>';
+            result += 'Last name = ' + employeeJson[1].lastName + '<br/>';
+            result += 'Gender = ' + employeeJson[1].gender + '<br/>';
 
             $('#resultJSON').html(result);
 
-            result = JSON.stringify(employeeJSON);
+            result = JSON.stringify(employeeJson);
             $('#resultJSON').html(result);
+
+            var i = 0;
+
+            while (i < 200000) {
+                i++;
+                $('#resultJSON').html(result);
+            }
+
+            var month = d.getMonth() + 1;
+            var day = d.getDate();
+
+            var output = d.getFullYear() + '/' +
+                (month < 10 ? '0' : '') + month + '/' +
+                (day < 10 ? '0' : '') + day;
+
+            $('#timeNow').html((new Date() - d));
         });
     </script>
 </head>
@@ -43,6 +62,7 @@
     <li>Czech Republic</li>
 </ul>
 <div id="resultJSON"></div>
-    <div id="jsonString"></div>
+<div id="jsonString"></div>
+<div id="timeNow"></div>
 </body>
 </html>
